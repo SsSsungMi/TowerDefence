@@ -18,11 +18,8 @@ using TMPro;
 public class SceneUiManager : MonoBehaviour
 {
     public List<GameObject> gameOptionBtnList;
-
-    // 성미 추가 선언
     public List<GameObject> stageBtnList;
     public Sprite[] exampleSprite;
-
     public Image introBg;
 
     // 스테이지 선택
@@ -32,8 +29,7 @@ public class SceneUiManager : MonoBehaviour
     // 플레이 방법
     public int currentExampleIndex = 0;
     private int minExampleIndex = 0;
-    private int maxExampleIndex = 4;
-    // 여기까지
+    private int maxExampleIndex = 2;
 
     public static SceneUiManager Instance
     {
@@ -48,7 +44,6 @@ public class SceneUiManager : MonoBehaviour
     }
     private static SceneUiManager instance;
 
-    // 성미 추가
     
     // StageSelect, Example, InGame -> MainMenu 버튼 이동
     public void MainMenuMove()
@@ -144,7 +139,6 @@ public class SceneUiManager : MonoBehaviour
             stageBtnList[currentStageIndex].SetActive(true);
         }
     }
-
     // 플레이 방법 넘기며 확인
     public void NextExampleUi()
     {
@@ -162,5 +156,4 @@ public class SceneUiManager : MonoBehaviour
             GameObject.Find("Example01_Image").GetComponent<Image>().sprite = exampleSprite[currentExampleIndex];
         }
     }
-    // 여기 까지
 }
